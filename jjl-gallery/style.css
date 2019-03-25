@@ -1,0 +1,110 @@
+.jjl-front-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-flow: row;
+
+  width: 100%;
+}
+
+.jjl-front-gallery-item-container {
+  grid-column: span 4;
+  overflow: hidden;
+  height: 400px;
+}
+
+.jjl-front-gallery-item {
+  height: 100% !important;
+  width: 100% !important;
+  background-size: cover;
+}
+
+.jjl-front-gallery-item-anchor {
+  cursor: pointer;
+}
+
+.jjl-front-gallery-modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2147483640;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.jjl-front-gallery-modal-content {
+  width: 75%;
+  background-color: white;
+  height: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.25);
+  transition: all 0.4s 0.2s;
+  z-index: 2147483647;
+}
+
+.jjl-front-gallery-modal:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.jjl-front-gallery-modal:target .jjl-front-gallery-modal-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.jjl-front-gallery-modal-content-image {
+  display: block;
+  width: 100%;
+  height: 80%;
+}
+
+.jjl-front-gallery-modal-content-close {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 25px;
+
+  cursor: pointer;
+}
+
+.jjl-front-gallery-modal-controls {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+  z-index: 2147483646;
+}
+
+.jjl-front-gallery-modal-controls-left,
+.jjl-front-gallery-modal-controls-right {
+  /* width: 35px;
+  bottom: 20%;
+  position: absolute; */
+}
+
+.jjl-front-gallery-modal-controls-left img,
+.jjl-front-gallery-modal-controls-right img {
+  width: 45px;
+  /* bottom: 10%; */
+  /* position: absolute; */
+}
+
+.jjl-front-gallery-modal-controls-left {
+  float: left;
+  padding-left: 50px;
+}
+
+.jjl-front-gallery-modal-controls-right {
+  float: right;
+  padding-right: 50px;
+  /* right: 20%; */
+}
